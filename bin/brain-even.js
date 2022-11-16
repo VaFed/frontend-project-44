@@ -12,6 +12,7 @@
 // Correct!
 // Congratulations, Sam!
 
+import readlineSync from 'readline-sync';
 
 function randomInteger(min, max) {
     // случайное число от min до (max+1)
