@@ -27,16 +27,40 @@ export const evenGame = () => {
     var userName = readlineSync.question('May I have your name? ');
     console.log('Hello, ' + userName + '!');
     console.log('Answer "yes" if the number is even, otherwise answer "no".');
+    let result = 0;
 
+    for(let i = 0; i <= 3; i++){
+    
+    if (result === 3){return console.log('Congratulations, ' + userName +'!')}
     let rand = randomInteger(1, 20);
     console.log('Question: ' + rand);
 
     var answer = readlineSync.question('Your answer: ');
-    if (answer === 'yes' && rand % 2 === 0){return console.log('Correct!')};
-    if (answer === 'no' && rand % 2 === 0){return console.log('It`s wrong.Try again.')};
-    if (answer === 'yes' && rand % 2 !== 0){return console.log('It`s wrong.Try again.')};
-    if (answer === 'no' && rand % 2 !== 0){return console.log('Correct!')}
-    if (answer !== 'no' || answer !== 'yes'){return console.log('It`s wrong.Try again.')};
+    
+    if (answer === 'yes' && rand % 2 === 0){
+      result += 1;
+      console.log('Correct!')
+    };
+
+    if (answer === 'no' && rand % 2 === 0){
+      console.log('It`s wrong.Try again.')
+    };
+
+    if (answer === 'yes' && rand % 2 !== 0){
+      console.log('It`s wrong.Try again.')
+    };
+
+    if (answer === 'no' && rand % 2 !== 0){
+      result += 1;
+      console.log('Correct!');
+    }
+
+    if (answer !== 'no' && answer !== 'yes'){
+      console.log('It`s wrong.Try again.')
+    };
+    
+    
+  }
 };
 
 evenGame();
