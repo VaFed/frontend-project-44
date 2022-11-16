@@ -29,9 +29,9 @@ export const evenGame = () => {
     console.log('Answer "yes" if the number is even, otherwise answer "no".');
     let result = 0;
 
-    for(let i = 0; i <= 3; i++){
+    for(let i = 0; i <= 2; i++){
     
-    if (result === 3){return console.log('Congratulations, ' + userName +'!')}
+    
     let rand = randomInteger(1, 20);
     console.log('Question: ' + rand);
 
@@ -40,6 +40,7 @@ export const evenGame = () => {
     if (answer === 'yes' && rand % 2 === 0){
       result += 1;
       console.log('Correct!')
+      if (result === 3){return console.log('Congratulations, ' + userName +'!')}
     };
 
     if (answer === 'no' && rand % 2 === 0){
@@ -53,6 +54,7 @@ export const evenGame = () => {
     if (answer === 'no' && rand % 2 !== 0){
       result += 1;
       console.log('Correct!');
+      if (result === 3){return console.log('Congratulations, ' + userName +'!')}
     }
 
     if (answer !== 'no' && answer !== 'yes'){
