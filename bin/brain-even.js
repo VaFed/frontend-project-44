@@ -14,11 +14,13 @@
 
 import readlineSync from 'readline-sync';
 
-function randomInteger(min, max) {
+export function randomInteger(min, max) {
     // случайное число от min до (max+1)
     let rand = min + Math.random() * (max + 1 - min);
     return Math.floor(rand);
 }
+
+console.log('Welcome to the Brain Games!');
 
 export const evenGame = () => {
 
@@ -36,3 +38,5 @@ export const evenGame = () => {
     if (answer === 'no' && rand % 2 !== 0){return console.log('Correct!')}
     if (answer !== 'no' || answer !== 'yes'){return console.log('It`s wrong.Try again.')};
 };
+
+evenGame();
