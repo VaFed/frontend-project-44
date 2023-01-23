@@ -3,5 +3,6 @@ import brainEvenGame from './games/even-game.js';
 import greatestCommonDivisor from './games/gcd-game.js';
 import brainPrimeGame from './games/prime-game.js';
 import brainProgressionGame from './games/progression-game.js';
+import { greetings } from './cli.js';
 
-console.log(brainCalcGame());
+
