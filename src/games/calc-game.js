@@ -33,6 +33,4 @@ const brainCalcGame = () => {
   };
 };
 
-//  console.log(brainCalcGame());
-
 export default brainCalcGame;

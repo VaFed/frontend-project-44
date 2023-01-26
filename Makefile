@@ -32,4 +32,4 @@ publish:
 
 lint:
 		npx eslint
-.PHONY : lint
+.PHONY :make lint

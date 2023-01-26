@@ -34,7 +34,5 @@ const greatestCommonDivisor = () => {
       correctAnswer: correctAnswerString,
     };
   };
-
-// greatestCommonDivisor();
   
   export default greatestCommonDivisor;

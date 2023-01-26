@@ -3,7 +3,6 @@ const brainPrimeGame = () => {
   let correctAnswer;
 
   const randomNumberUntilHun = Math.floor(Math.random() * 99) + 1;
-  // console.log(randomNumberUntilTen);
   
   const isPrime = (number) => {
     if (number < 2) {
@@ -20,7 +19,6 @@ const brainPrimeGame = () => {
   };
 
   isPrime(randomNumberUntilHun);
- 
 
   return {
     rulesText,
@@ -28,7 +26,5 @@ const brainPrimeGame = () => {
     correctAnswer,
   };
 };
-
-// brainPrimeGame();
 
 export default brainPrimeGame;

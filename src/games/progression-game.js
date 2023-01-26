@@ -3,9 +3,7 @@ const brainProgressionGame = () => {
     let correctAnswer;
   
     const randomNumberUntilTen = Math.floor(Math.random() * 10) + 1;
-    // console.log(randomNumberUntilTen);
     const randomNumberUntilTwenty = Math.floor(Math.random() * 20) + 1;
-    // console.log(randomNumberUntilTwenty);
     const oneToTenStepOfProgression = randomNumberUntilTen;
     const firstNumber = randomNumberUntilTwenty;
     let sumToStep = firstNumber; 
@@ -16,22 +14,18 @@ const brainProgressionGame = () => {
         sumToStep += oneToTenStepOfProgression
         resultArrProgression.push(sumToStep);
     }
-    // console.log(resultArrProgression);
 
     const positionOfHidenElement = Math.floor(Math.random() * 10) + 1;
     correctAnswer = resultArrProgression[positionOfHidenElement];
     resultArrProgression[positionOfHidenElement] = ".."
     resultArrProgression = resultArrProgression.join(' ');
-
-    // console.log(resultArrProgression);
+    const stringCorrectAnswer = correctAnswer.toString();
   
     return {
       rulesText,
       question: resultArrProgression,
-      correctAnswer,
+      correctAnswer: stringCorrectAnswer,
     };
   };
   
-
-
   export default brainProgressionGame;
