@@ -7,7 +7,7 @@ import { greetings, showCondition, showQuestion, isRight } from './cli.js';
 
 const startGame = (gameName) => {
 
-    if(gameName === 'brain-game'){return greetings()}
+    if(gameName === 'brain-game'){return greetings();}
 
     greetings();
 
