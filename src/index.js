@@ -7,6 +7,8 @@ import { greetings, showCondition, showQuestion, isRight } from './cli.js';
 
 const startGame = (gameName) => {
 
+    if(gameName === 'brain-game'){return greetings()}
+
     greetings();
 
     let dateOfGame;
@@ -58,7 +60,7 @@ const startGame = (gameName) => {
         i += 1;
         } while(i < 3)
     }
-    
+
     if(gameName === 'brain-prime'){
         dateOfGame = brainPrimeGame();
         rulesText = dateOfGame.rulesText;
