@@ -3,7 +3,7 @@ import brainEvenGame from './games/even-game.js';
 import greatestCommonDivisor from './games/gcd-game.js';
 import brainPrimeGame from './games/prime-game.js';
 import brainProgressionGame from './games/progression-game.js';
-import { greetings, showCondition, showQuestion, isRight } from './cli.js';
+import { greetings, showCondition, showQuestion, isRight, congratulations } from './cli.js';
 
 const startGame = (gameName) => {
 
@@ -20,7 +20,7 @@ const startGame = (gameName) => {
         dateOfGame = greatestCommonDivisor();
         rulesText = dateOfGame.rulesText;
         showCondition(rulesText);
-        let i = 0;
+        let i = -1;
         do{
         question = dateOfGame.question;
         correctAnswer = dateOfGame.correctAnswer;
@@ -28,6 +28,7 @@ const startGame = (gameName) => {
         if(isRight(correctAnswer) === false){return;}
         dateOfGame = greatestCommonDivisor();
         i += 1;
+        if(i === 2){return congratulations();}
         } while(i < 3)
     }
 
@@ -35,7 +36,7 @@ const startGame = (gameName) => {
         dateOfGame = brainCalcGame();
         rulesText = dateOfGame.rulesText;
         showCondition(rulesText);
-        let i = 0;
+        let i = -1;
         do{
         question = dateOfGame.question;
         correctAnswer = dateOfGame.correctAnswer;
@@ -43,6 +44,7 @@ const startGame = (gameName) => {
         if(isRight(correctAnswer) === false){return;}
         dateOfGame = brainCalcGame();
         i += 1;
+        if(i === 2){return congratulations();}
         } while(i < 3)
     }
 
@@ -50,7 +52,7 @@ const startGame = (gameName) => {
         dateOfGame = brainEvenGame();
         rulesText = dateOfGame.rulesText;
         showCondition(rulesText);
-        let i = 0;
+        let i = -1;
         do{
         question = dateOfGame.question;
         correctAnswer = dateOfGame.correctAnswer;
@@ -58,6 +60,7 @@ const startGame = (gameName) => {
         if(isRight(correctAnswer) === false){return;}
         dateOfGame = brainEvenGame();
         i += 1;
+        if(i === 2){return congratulations();}
         } while(i < 3)
     }
 
@@ -65,7 +68,7 @@ const startGame = (gameName) => {
         dateOfGame = brainPrimeGame();
         rulesText = dateOfGame.rulesText;
         showCondition(rulesText);
-        let i = 0;
+        let i = -1;
         do{
         question = dateOfGame.question;
         correctAnswer = dateOfGame.correctAnswer;
@@ -73,6 +76,7 @@ const startGame = (gameName) => {
         if(isRight(correctAnswer) === false){return;}
         dateOfGame = brainPrimeGame();
         i += 1;
+        if(i === 2){return congratulations();}
         } while(i < 3)
     }
 
@@ -80,7 +84,7 @@ const startGame = (gameName) => {
         dateOfGame = brainProgressionGame();
         rulesText = dateOfGame.rulesText;
         showCondition(rulesText);
-        let i = 0;
+        let i = -1;
         do{
         question = dateOfGame.question;
         correctAnswer = dateOfGame.correctAnswer;
@@ -88,6 +92,7 @@ const startGame = (gameName) => {
         if(isRight(correctAnswer) === false){return;}
         dateOfGame = brainProgressionGame();
         i += 1;
+        if(i === 2){return congratulations();}
         } while(i < 3)
     }
 };
