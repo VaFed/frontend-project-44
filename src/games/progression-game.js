@@ -15,12 +15,12 @@ const brainProgressionGame = () => {
         resultArrProgression.push(sumToStep);
     }
 
-    const positionOfHidenElement = Math.floor(Math.random() * 10) + 1;
+    const positionOfHidenElement = Math.floor(Math.random() * 10);
     correctAnswer = resultArrProgression[positionOfHidenElement];
+    const stringCorrectAnswer = correctAnswer.toString();
     resultArrProgression[positionOfHidenElement] = ".."
     resultArrProgression = resultArrProgression.join(' ');
-    const stringCorrectAnswer = correctAnswer.toString();
-  
+    
     return {
       rulesText,
       question: resultArrProgression,
