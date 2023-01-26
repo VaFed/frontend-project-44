@@ -31,5 +31,5 @@ publish:
 .PHONY : publish
 
 lint:
-		npx eslint
+		npx lint
 .PHONY :make lint
