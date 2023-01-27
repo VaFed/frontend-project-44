@@ -28,6 +28,7 @@ brain-progression:
 
 publish:
 		npm publish --dry-run
+		
 .PHONY : publish
 
 lint:
