@@ -6,16 +6,18 @@ const brainPrimeGame = () => {
 
   const isPrime = (number) => {
     if (number < 2) {
-      return correctAnswer = 'no';
+      correctAnswer = 'no';
+      return correctAnswer;
     }
 
     for (let i = 2; i <= number / 2; i += 1) {
       if (number % i === 0) {
-        return correctAnswer = 'no';
+        correctAnswer = 'no';
+        return correctAnswer;
       }
     }
-
-    return correctAnswer = 'yes';
+    correctAnswer = 'yes';
+    return correctAnswer;
   };
 
   isPrime(randomNumberUntilHun);
