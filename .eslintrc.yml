@@ -1,6 +1,5 @@
 env:
   node: true
-  browser: true
   es2021: true
 
 extends: airbnb-base
@@ -14,5 +13,4 @@ rules:
     - error
     - ignorePackages
     - js: always
-  no-underscore-dangle: [2, { "allow": ["__filename", "__dirname"] }]
 
