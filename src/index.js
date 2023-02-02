@@ -10,6 +10,13 @@ const showCondition = (condition) => (console.log(condition));
 const showQuestion = (question) => (console.log(`Question: ${question}`));
 
 let userName;
+
+const greetings = () => {
+  console.log('Welcome to the Brain Games!');
+  userName = readlineSync.question('May I have your name? ');
+  return console.log(`Hello, ${userName}!`);
+};
+
 const isRight = (correctAnswer) => {
   const answer = readlineSync.question('Your answer: ');
   if (correctAnswer === answer) {
@@ -23,12 +30,6 @@ const congratulations = () => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-const greetings = () => {
-  console.log('Welcome to the Brain Games!');
-  userName = readlineSync.question('May I have your name? ');
-  return console.log(`Hello, ${userName}!`);
-};
-
 const startGame = (gameName) => {
   if (gameName === 'brain-game') { return greetings(); }
 
@@ -39,37 +40,38 @@ const startGame = (gameName) => {
   let question;
   let correctAnswer;
 
-  switch (gameName) {
-    case 'brain-gcd':
-      dateOfGame = greatestCommonDivisor();
-      break;
-    case 'brain-calc':
-      dateOfGame = brainCalcGame();
-      break;
-    case 'brain-even':
-      dateOfGame = brainEvenGame();
-      break;
-    case 'brain-prime':
-      dateOfGame = brainPrimeGame();
-      break;
-    case 'brain-progression':
-      dateOfGame = brainProgressionGame();
-      break;
-    default:
-      return null;
-  }
-
-  rulesText = dateOfGame.rulesText;
-  showCondition(rulesText);
-
-  for (let i = 0; i < 3; i += 1) {
-    question = dateOfGame.question;
-    correctAnswer = dateOfGame.correctAnswer;
-    showQuestion(question);
-    if (!isRight(correctAnswer)) {
-      return null;
+  for (let j = 0; j < 3; j += 1) {
+    switch (gameName) {
+      case 'brain-gcd':
+        dateOfGame = greatestCommonDivisor();
+        break;
+      case 'brain-calc':
+        dateOfGame = brainCalcGame();
+        break;
+      case 'brain-even':
+        dateOfGame = brainEvenGame();
+        break;
+      case 'brain-prime':
+        dateOfGame = brainPrimeGame();
+        break;
+      case 'brain-progression':
+        dateOfGame = brainProgressionGame();
+        break;
+      default:
+        return null;
     }
-    dateOfGame = greatestCommonDivisor();
+
+    rulesText = dateOfGame.rulesText;
+    showCondition(rulesText);
+
+    for (let i = 0; i < 3; i += 1) {
+      question = dateOfGame.question;
+      correctAnswer = dateOfGame.correctAnswer;
+      showQuestion(question);
+      if (!isRight(correctAnswer)) {
+        break;
+      }
+    }
   }
 
   return congratulations();
