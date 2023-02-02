@@ -2,8 +2,12 @@ const brainProgressionGame = () => {
   const rulesText = 'What number is missing in the progression?';
   let correctAnswer = 0;
 
-  const randomNumberUntilTen = Math.floor(Math.random() * 10) + 1;
-  const randomNumberUntilTwenty = Math.floor(Math.random() * 20) + 1;
+  const upToTwenty = 20;
+  const upToTen = 10;
+  const upToOne = 1;
+
+  const randomNumberUntilTen = Math.floor(Math.random() * upToTen) + upToOne;
+  const randomNumberUntilTwenty = Math.floor(Math.random() * upToTwenty) + upToOne;
   const oneToTenStepOfProgression = randomNumberUntilTen;
   const firstNumber = randomNumberUntilTwenty;
   let sumToStep = firstNumber;

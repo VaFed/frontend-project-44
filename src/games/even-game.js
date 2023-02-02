@@ -2,7 +2,10 @@ const brainEvenGame = () => {
   const rulesText = 'Answer "yes" if the number is even, otherwise answer "no".';
   let correctAnswer;
 
-  const randomNumberUntilHundred = Math.floor(Math.random() * 99) + 1;
+  const upToOneHundred = 99;
+  const upToOne = 1;
+
+  const randomNumberUntilHundred = Math.floor(Math.random() * upToOneHundred) + upToOne;
   const questionNumber = randomNumberUntilHundred;
 
   if (questionNumber % 2 === 0) {

@@ -1,14 +1,17 @@
-import _ from 'lodash';
-
 const brainCalcGame = () => {
   const rulesText = 'What is the result of the expression?';
   let correctAnswer = 0;
 
+  const sample = (array) => array[Math.floor(Math.random() * array.length)];
+
   const operators = ['*', '-', '+'];
 
-  const randomOperator = _.sample(operators);
-  const firstOperand = Math.floor(Math.random() * 99) + 1;
-  const secondOperand = Math.floor(Math.random() * 99) + 1;
+  const upToOneHundred = 99;
+  const upToOne = 1;
+
+  const randomOperator = sample(operators);
+  const firstOperand = Math.floor(Math.random() * upToOneHundred) + upToOne;
+  const secondOperand = Math.floor(Math.random() * upToOneHundred) + upToOne;
 
   const questionExpression = `${firstOperand} ${randomOperator} ${secondOperand}`;
 
