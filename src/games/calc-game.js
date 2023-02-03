@@ -1,5 +1,8 @@
+import startGame from '../index.js';
+
+const rulesText = 'What is the result of the expression?';
+
 const brainCalcGame = () => {
-  const rulesText = 'What is the result of the expression?';
   let correctAnswer = 0;
 
   const sample = (array) => array[Math.floor(Math.random() * array.length)];
@@ -30,10 +33,11 @@ const brainCalcGame = () => {
   const stringCorrectAnswer = correctAnswer.toString();
 
   return {
-    rulesText,
     question: questionExpression,
     correctAnswer: stringCorrectAnswer,
   };
 };
 
-export default brainCalcGame;
+const brainCalc = startGame(rulesText, brainCalcGame);
+
+export default brainCalc;

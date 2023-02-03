@@ -1,5 +1,8 @@
+import startGame from '../index.js';
+
+const rulesText = 'Answer "yes" if the number is even, otherwise answer "no".';
+
 const brainEvenGame = () => {
-  const rulesText = 'Answer "yes" if the number is even, otherwise answer "no".';
   let correctAnswer;
 
   const upToOneHundred = 99;
@@ -16,10 +19,11 @@ const brainEvenGame = () => {
   }
 
   return {
-    rulesText,
     question: questionNumber,
     correctAnswer,
   };
 };
 
-export default brainEvenGame;
+const brainEven = startGame(rulesText, brainEvenGame);
+
+export default brainEven;

@@ -1,5 +1,8 @@
+import startGame from '../index.js';
+
+const rulesText = 'Find the greatest common divisor of given numbers.';
+
 const greatestCommonDivisor = () => {
-  const rulesText = 'Find the greatest common divisor of given numbers.';
   let correctAnswerString;
 
   const upToOneHundred = 99;
@@ -31,10 +34,11 @@ const greatestCommonDivisor = () => {
   }
 
   return {
-    rulesText,
     question: questionNumbers,
     correctAnswer: correctAnswerString,
   };
 };
 
-export default greatestCommonDivisor;
+const brainGcd = startGame(rulesText, greatestCommonDivisor);
+
+export default brainGcd;

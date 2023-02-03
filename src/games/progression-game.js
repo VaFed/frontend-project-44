@@ -1,5 +1,8 @@
+import startGame from '../index.js';
+
+const rulesText = 'What number is missing in the progression?';
+
 const brainProgressionGame = () => {
-  const rulesText = 'What number is missing in the progression?';
   let correctAnswer = 0;
 
   const upToTwenty = 20;
@@ -26,10 +29,11 @@ const brainProgressionGame = () => {
   resultArrProgression = resultArrProgression.join(' ');
 
   return {
-    rulesText,
     question: resultArrProgression,
     correctAnswer: stringCorrectAnswer,
   };
 };
 
-export default brainProgressionGame;
+const brainProgression = startGame(rulesText, brainProgressionGame);
+
+export default brainProgression;

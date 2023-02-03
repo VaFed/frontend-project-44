@@ -1,5 +1,8 @@
+import startGame from '../index.js';
+
+const rulesText = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
 const brainPrimeGame = () => {
-  const rulesText = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   let correctAnswer;
 
   const upToOneHundred = 99;
@@ -26,10 +29,11 @@ const brainPrimeGame = () => {
   isPrime(randomNumberUntilHun);
 
   return {
-    rulesText,
     question: randomNumberUntilHun,
     correctAnswer,
   };
 };
 
-export default brainPrimeGame;
+const brainPrime = startGame(rulesText, brainPrimeGame);
+
+export default brainPrime;
