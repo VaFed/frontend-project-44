@@ -12,15 +12,6 @@ const greetings = () => {
   return console.log(`Hello, ${userName}!`);
 };
 
-const isRight = (correctAnswer) => {
-  const answer = readlineSync.question('Your answer: ');
-  if (correctAnswer === answer) {
-    return console.log('Correct!');
-  }
-  console.log(`${answer} is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${userName}!`);
-  return false;
-};
-
 const congratulations = () => {
   console.log(`Congratulations, ${userName}!`);
 };
@@ -37,14 +28,18 @@ const startGame = (rules, functonOfGame) => {
     dateOfGame = functonOfGame();
     question = dateOfGame.question;
     correctAnswer = dateOfGame.correctAnswer;
-    // console.log(rulesText);
-    // console.log(question);
-    // console.log(correctAnswer);
+    // console.log('rulesText', rulesText);
+    // console.log('question', question);
+    console.log('correctAnswer', correctAnswer);
 
     showQuestion(question);
-
-    if (!isRight(correctAnswer)) {
-      return null;
+    const answer = readlineSync.question('Your answer: ');
+    if (correctAnswer === answer) {
+      console.log('Correct!');
+    }
+    if (correctAnswer !== answer) {
+      console.log(`${answer} is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${userName}!`);
+      return false;
     }
   }
 
