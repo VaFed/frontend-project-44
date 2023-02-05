@@ -34,6 +34,6 @@ const brainPrimeGame = () => {
   };
 };
 
-const brainPrime = startGame(rulesText, brainPrimeGame);
+const brainPrime = () => startGame(rulesText, brainPrimeGame);
 
 export default brainPrime;

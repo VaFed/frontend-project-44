@@ -39,6 +39,6 @@ const greatestCommonDivisor = () => {
   };
 };
 
-const brainGcd = startGame(rulesText, greatestCommonDivisor);
+const brainGcd = () => startGame(rulesText, greatestCommonDivisor);
 
 export default brainGcd;

@@ -38,6 +38,6 @@ const brainCalcGame = () => {
   };
 };
 
-const brainCalc = startGame(rulesText, brainCalcGame);
+const brainCalc = () => startGame(rulesText, brainCalcGame);
 
 export default brainCalc;

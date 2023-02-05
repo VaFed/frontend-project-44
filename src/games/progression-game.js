@@ -34,6 +34,6 @@ const brainProgressionGame = () => {
   };
 };
 
-const brainProgression = startGame(rulesText, brainProgressionGame);
+const brainProgression = () => startGame(rulesText, brainProgressionGame);
 
 export default brainProgression;
