@@ -28,9 +28,6 @@ const startGame = (rules, functonOfGame) => {
     dateOfGame = functonOfGame();
     question = dateOfGame.question;
     correctAnswer = dateOfGame.correctAnswer;
-    // console.log('rulesText', rulesText);
-    // console.log('question', question);
-    console.log('correctAnswer', correctAnswer);
 
     showQuestion(question);
     const answer = readlineSync.question('Your answer: ');

@@ -3,5 +3,4 @@
 
 <a href="https://codeclimate.com/github/VaFed/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/a33cb20ebe9c9df76c73/maintainability" /></a>
 
-https://asciinema.org/a/kpYGR6AISyWdDd4qvIwMVbL3z
-https://asciinema.org/a/ntG9zN2dbl59TPKQwvcBUrghP
+[![asciicast](https://asciinema.org/a/eXjZxFAL5bbEaRRQ61S6y7HGz.svg)](https://asciinema.org/a/eXjZxFAL5bbEaRRQ61S6y7HGz)
