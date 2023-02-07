@@ -27,8 +27,7 @@ brain-progression:
 .PHONY : brain-progression
 
 publish:
-		npm publish --dry-run
-		
+		npm publish --dry-run	
 .PHONY : publish
 
 lint:

@@ -17,7 +17,9 @@ const brainProgressionGame = () => {
 
   let resultArrProgression = [firstNumber];
 
-  for (let i = 0; i <= 8; i += 1) {
+  const numberOfProgressionSteps = 8;
+
+  for (let i = 0; i <= numberOfProgressionSteps; i += 1) {
     sumToStep += oneToTenStepOfProgression;
     resultArrProgression.push(sumToStep);
   }
@@ -34,6 +36,6 @@ const brainProgressionGame = () => {
   };
 };
 
-const brainProgression = () => startGame(rulesText, brainProgressionGame);
+const playProgressionGame = () => startGame(rulesText, brainProgressionGame);
 
-export default brainProgression;
+export default playProgressionGame;

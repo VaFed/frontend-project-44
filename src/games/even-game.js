@@ -24,6 +24,6 @@ const brainEvenGame = () => {
   };
 };
 
-const brainEven = () => startGame(rulesText, brainEvenGame);
+const playEvenGame = () => startGame(rulesText, brainEvenGame);
 
-export default brainEven;
+export default playEvenGame;
