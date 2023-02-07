@@ -2,12 +2,12 @@ import startGame from '../index.js';
 
 const rulesText = 'What is the result of the expression?';
 
+const operators = ['*', '-', '+'];
+
 const brainCalcGame = () => {
   let correctAnswer = 0;
 
   const sample = (array) => array[Math.floor(Math.random() * array.length)];
-
-  const operators = ['*', '-', '+'];
 
   const upToOneHundred = 99;
   const upToOne = 1;
