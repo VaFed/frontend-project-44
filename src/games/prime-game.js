@@ -1,14 +1,15 @@
 import startGame from '../index.js';
+import randomInteger from '../randomInteger-function.js';
 
 const rulesText = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const brainPrimeGame = () => {
   let correctAnswer;
 
-  const upToOneHundred = 99;
-  const upToOne = 1;
+  const lowerLimit = 1;
+  const upperLimit = 100;
 
-  const randomNumberUntilHun = Math.floor(Math.random() * upToOneHundred) + upToOne;
+  const randomNumberUntilHun = randomInteger(lowerLimit, upperLimit);
 
   const isPrime = (number) => {
     if (number < 2) {

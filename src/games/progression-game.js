@@ -1,16 +1,17 @@
 import startGame from '../index.js';
+import randomInteger from '../randomInteger-function.js';
 
 const rulesText = 'What number is missing in the progression?';
 
 const brainProgressionGame = () => {
   let correctAnswer = 0;
 
-  const upToTwenty = 20;
-  const upToTen = 10;
-  const upToOne = 1;
+  const upperLimitFirst = 20;
+  const upperLimitSecond = 10;
+  const lowerLimit = 1;
 
-  const randomNumberUntilTen = Math.floor(Math.random() * upToTen) + upToOne;
-  const randomNumberUntilTwenty = Math.floor(Math.random() * upToTwenty) + upToOne;
+  const randomNumberUntilTen = randomInteger(lowerLimit, upperLimitSecond);
+  const randomNumberUntilTwenty = randomInteger(lowerLimit, upperLimitFirst);
   const oneToTenStepOfProgression = randomNumberUntilTen;
   const firstNumber = randomNumberUntilTwenty;
   let sumToStep = firstNumber;

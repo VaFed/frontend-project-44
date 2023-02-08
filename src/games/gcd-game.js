@@ -1,15 +1,16 @@
 import startGame from '../index.js';
+import randomInteger from '../randomInteger-function.js';
 
 const rulesText = 'Find the greatest common divisor of given numbers.';
 
 const greatestCommonDivisor = () => {
   let correctAnswerString;
 
-  const upToOneHundred = 99;
-  const upToOne = 1;
+  const lowerLimit = 1;
+  const upperLimit = 100;
 
-  const firstOperand = Math.floor(Math.random() * upToOneHundred) + upToOne;
-  const secondOperand = Math.floor(Math.random() * upToOneHundred) + upToOne;
+  const firstOperand = randomInteger(lowerLimit, upperLimit);
+  const secondOperand = randomInteger(lowerLimit, upperLimit);
   const questionNumbers = `${firstOperand} ${secondOperand}`;
 
   let firstOp = firstOperand;
