@@ -1,28 +1,46 @@
 import startGame from '../index.js';
-import randomInteger from '../randomInteger-function.js';
-import chooseOperator from '../operator-function.js';
+import getRandomNumder from '../randomInteger.js';
 
 const rulesText = 'What is the result of the expression?';
 
 const operators = ['*', '-', '+'];
 
+function chooseOperator(firstOperand, secondOperand, randomOperator) {
+  let correctAnswer;
+  switch (randomOperator) {
+    case '*':
+      correctAnswer = firstOperand * secondOperand;
+      break;
+    case '-':
+      correctAnswer = firstOperand - secondOperand;
+      break;
+    case '+':
+    default:
+      correctAnswer = firstOperand + secondOperand;
+      break;
+  }
+  return correctAnswer;
+}
+
 const brainCalcGame = () => {
-  const sample = (array) => array[Math.floor(Math.random() * array.length)];
+  const origin = 0;
+  const lengthOffset = 1;
+  const sample = (array) => array[getRandomNumder(origin, array.length - lengthOffset)];
 
   const lowerLimit = 1;
   const upperLimit = 100;
 
   const randomOperator = sample(operators);
-  const firstOperand = randomInteger(lowerLimit, upperLimit);
-  const secondOperand = randomInteger(lowerLimit, upperLimit);
+  const firstOperand = getRandomNumder(lowerLimit, upperLimit);
+  const secondOperand = getRandomNumder(lowerLimit, upperLimit);
 
-  const questionExpression = `${firstOperand} ${randomOperator} ${secondOperand}`;
+  const question = `${firstOperand} ${randomOperator} ${secondOperand}`;
 
-  const stringCorectAnswer = chooseOperator(firstOperand, secondOperand, randomOperator).toString();
+  const correctAnswer = chooseOperator(firstOperand, secondOperand, randomOperator).toString();
 
   return {
-    question: questionExpression,
-    correctAnswer: stringCorectAnswer,
+    question,
+    correctAnswer,
   };
 };
 

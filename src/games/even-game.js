@@ -1,22 +1,15 @@
 import startGame from '../index.js';
-import randomInteger from '../randomInteger-function.js';
+import getRandomNumder from '../randomInteger.js';
 
 const rulesText = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const brainEvenGame = () => {
-  let correctAnswer;
+const isEven = (num) => num % 2 === 0;
 
+const brainEvenGame = () => {
   const lowerLimit = 1;
   const upperLimit = 100;
-
-  const questionNumber = randomInteger(lowerLimit, upperLimit);
-
-  if (questionNumber % 2 === 0) {
-    correctAnswer = 'yes';
-  }
-  if (questionNumber % 2 !== 0) {
-    correctAnswer = 'no';
-  }
+  const questionNumber = getRandomNumder(lowerLimit, upperLimit);
+  const correctAnswer = isEven(questionNumber) ? 'yes' : 'no';
 
   return {
     question: questionNumber,

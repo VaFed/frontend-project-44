@@ -1,31 +1,36 @@
 import startGame from '../index.js';
-import randomInteger from '../randomInteger-function.js';
+import getRandomNumder from '../randomInteger.js';
 
 const rulesText = 'What number is missing in the progression?';
 
-const brainProgressionGame = () => {
-  let correctAnswer = 0;
-
-  const upperLimitFirst = 20;
-  const upperLimitSecond = 10;
-  const lowerLimit = 1;
-
-  const randomNumberUntilTen = randomInteger(lowerLimit, upperLimitSecond);
-  const randomNumberUntilTwenty = randomInteger(lowerLimit, upperLimitFirst);
-  const oneToTenStepOfProgression = randomNumberUntilTen;
-  const firstNumber = randomNumberUntilTwenty;
+const buildProgression = (firstNumber, oneToTenStepOfProgression, numberOfProgressionSteps) => {
   let sumToStep = firstNumber;
-
-  let resultArrProgression = [firstNumber];
-
-  const numberOfProgressionSteps = 8;
+  const resultArrProgression = [firstNumber];
 
   for (let i = 0; i <= numberOfProgressionSteps; i += 1) {
     sumToStep += oneToTenStepOfProgression;
     resultArrProgression.push(sumToStep);
   }
 
-  const positionOfHidenElement = Math.floor(Math.random() * 10);
+  return resultArrProgression;
+};
+
+const buildRoundData = () => {
+  let correctAnswer = 0;
+
+  const upperLimitFirst = 20;
+  const upperLimitSecond = 10;
+  const lowerLimit = 1;
+
+  const randomNumberUntilTen = getRandomNumder(lowerLimit, upperLimitSecond);
+  const randomNumberUntilTwenty = getRandomNumder(lowerLimit, upperLimitFirst);
+  const stepOfProgression = randomNumberUntilTen;
+  const firstNumber = randomNumberUntilTwenty;
+
+  const numberOfSteps = 8;
+  let resultArrProgression = buildProgression(firstNumber, stepOfProgression, numberOfSteps);
+
+  const positionOfHidenElement = getRandomNumder(lowerLimit, upperLimitSecond);
   correctAnswer = resultArrProgression[positionOfHidenElement];
   const stringCorrectAnswer = correctAnswer.toString();
   resultArrProgression[positionOfHidenElement] = '..';
@@ -37,6 +42,6 @@ const brainProgressionGame = () => {
   };
 };
 
-const playProgressionGame = () => startGame(rulesText, brainProgressionGame);
+const playProgressionGame = () => startGame(rulesText, buildRoundData);
 
 export default playProgressionGame;

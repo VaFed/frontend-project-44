@@ -1,40 +1,35 @@
 import startGame from '../index.js';
-import randomInteger from '../randomInteger-function.js';
+import getRandomNumder from '../randomInteger.js';
 
 const rulesText = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const brainPrimeGame = () => {
-  let correctAnswer;
+const isPrime = (number) => {
+  const limitOfPrime = 2;
+  const middleInterval = 2;
+  const step = 1;
+  if (number < limitOfPrime) {
+    return false;
+  }
 
+  for (let i = limitOfPrime; i <= number / middleInterval; i += step) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};
+
+const buildRoundData = () => {
   const lowerLimit = 1;
   const upperLimit = 100;
-
-  const randomNumberUntilHun = randomInteger(lowerLimit, upperLimit);
-
-  const isPrime = (number) => {
-    if (number < 2) {
-      correctAnswer = 'no';
-      return correctAnswer;
-    }
-
-    for (let i = 2; i <= number / 2; i += 1) {
-      if (number % i === 0) {
-        correctAnswer = 'no';
-        return correctAnswer;
-      }
-    }
-    correctAnswer = 'yes';
-    return correctAnswer;
-  };
-
-  isPrime(randomNumberUntilHun);
-
+  const randomNumberUntilHun = getRandomNumder(lowerLimit, upperLimit);
+  const correctAnswer = isPrime(randomNumberUntilHun) ? 'yes' : 'no';
   return {
     question: randomNumberUntilHun,
     correctAnswer,
   };
 };
 
-const playPrimeGame = () => startGame(rulesText, brainPrimeGame);
+const playPrimeGame = () => startGame(rulesText, buildRoundData);
 
 export default playPrimeGame;
