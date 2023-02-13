@@ -4,11 +4,11 @@ import getRandomNumder from '../randomInteger.js';
 const rulesText = 'Find the greatest common divisor of given numbers.';
 
 const findGreatestCommonDivisor = (firstOperand, secondOperand) => {
-  while (secondOperand !== 0) {
-    [firstOperand, secondOperand] = [secondOperand, firstOperand % secondOperand];
+  if (secondOperand === 0) {
+    return firstOperand;
   }
 
-  return firstOperand;
+  return findGreatestCommonDivisor(secondOperand, firstOperand % secondOperand);
 };
 
 const greatestCommonDivisor = () => {
