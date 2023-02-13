@@ -23,7 +23,7 @@ const buildRoundData = () => {
   const lowerLimit = 1;
   const upperLimit = 100;
   const randomNumber = getRandomNumder(lowerLimit, upperLimit);
-  const correctAnswer = isPrime(randomNumberUntilHun) ? 'yes' : 'no';
+  const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
   return {
     question: randomNumber,
     correctAnswer,
