@@ -6,31 +6,24 @@ const rulesText = 'What is the result of the expression?';
 const operators = ['*', '-', '+'];
 
 function chooseOperator(firstOperand, secondOperand, randomOperator) {
-  let correctAnswer;
   switch (randomOperator) {
     case '*':
-      correctAnswer = firstOperand * secondOperand;
-      break;
+      return firstOperand * secondOperand;
     case '-':
-      correctAnswer = firstOperand - secondOperand;
-      break;
+      return firstOperand - secondOperand;
     case '+':
+      return firstOperand + secondOperand;
     default:
-      correctAnswer = firstOperand + secondOperand;
-      break;
+      throw new Error('Unknown state!');
   }
-  return correctAnswer;
 }
 
 const brainCalcGame = () => {
-  const origin = 0;
-  const lengthOffset = 1;
-  const sample = (array) => array[getRandomNumder(origin, array.length - lengthOffset)];
-
+  const randomOperatorIndex = getRandomNumder(0, operators.length - 1);
   const lowerLimit = 1;
   const upperLimit = 100;
 
-  const randomOperator = sample(operators);
+  const randomOperator = operators[randomOperatorIndex];
   const firstOperand = getRandomNumder(lowerLimit, upperLimit);
   const secondOperand = getRandomNumder(lowerLimit, upperLimit);
 

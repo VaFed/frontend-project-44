@@ -16,8 +16,6 @@ const buildProgression = (firstNumber, oneToTenStepOfProgression, numberOfProgre
 };
 
 const buildRoundData = () => {
-  let correctAnswer = 0;
-
   const upperLimitFirst = 20;
   const upperLimitSecond = 10;
   const lowerLimit = 1;
@@ -28,17 +26,15 @@ const buildRoundData = () => {
   const firstNumber = randomNumberUntilTwenty;
 
   const numberOfSteps = 8;
-  let resultArrProgression = buildProgression(firstNumber, stepOfProgression, numberOfSteps);
-
-  const positionOfHidenElement = getRandomNumder(lowerLimit, upperLimitSecond);
-  correctAnswer = resultArrProgression[positionOfHidenElement];
-  const stringCorrectAnswer = correctAnswer.toString();
-  resultArrProgression[positionOfHidenElement] = '..';
-  resultArrProgression = resultArrProgression.join(' ');
+  const progression = buildProgression(firstNumber, stepOfProgression, numberOfSteps);
+  const positionOfHidenElement = getRandomNumder(lowerLimit, progression.length - 1);
+  const correctAnswer = progression[positionOfHidenElement];
+  progression[positionOfHidenElement] = '..';
+  const stringProgression = progression.join(' ');
 
   return {
-    question: resultArrProgression,
-    correctAnswer: stringCorrectAnswer,
+    question: stringProgression,
+    correctAnswer: String(correctAnswer),
   };
 };
 
