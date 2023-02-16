@@ -4,12 +4,11 @@ import getRandomNumder from '../randomInteger.js';
 const rulesText = 'What number is missing in the progression?';
 
 const buildProgression = (firstNumber, oneToTenStepOfProgression, numberOfProgressionSteps) => {
-  let sumToStep = firstNumber;
   const resultArrProgression = [firstNumber];
-
-  for (let i = 0; i <= numberOfProgressionSteps; i += 1) {
-    sumToStep += oneToTenStepOfProgression;
-    resultArrProgression.push(sumToStep);
+  const addToTenStep = 1;
+  
+  for (let i = 1; i <= numberOfProgressionSteps + addToTenStep; i += 1) {
+    resultArrProgression.push(firstNumber + i * oneToTenStepOfProgression);
   }
 
   return resultArrProgression;
@@ -20,20 +19,18 @@ const buildRoundData = () => {
   const upperLimitSecond = 10;
   const lowerLimit = 1;
 
-  const randomNumberUntilTen = getRandomNumder(lowerLimit, upperLimitSecond);
-  const randomNumberUntilTwenty = getRandomNumder(lowerLimit, upperLimitFirst);
-  const stepOfProgression = randomNumberUntilTen;
-  const firstNumber = randomNumberUntilTwenty;
+  const stepOfProgression = getRandomNumder(lowerLimit, upperLimitSecond);
+  const firstNumber = getRandomNumder(lowerLimit, upperLimitFirst);
 
   const numberOfSteps = 8;
   const progression = buildProgression(firstNumber, stepOfProgression, numberOfSteps);
+  console.log(progression)
   const positionOfHidenElement = getRandomNumder(lowerLimit, progression.length - 1);
   const correctAnswer = progression[positionOfHidenElement];
   progression[positionOfHidenElement] = '..';
-  const stringProgression = progression.join(' ');
 
   return {
-    question: stringProgression,
+    question: progression.join(' '),
     correctAnswer: String(correctAnswer),
   };
 };

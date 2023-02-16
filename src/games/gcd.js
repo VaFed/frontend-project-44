@@ -12,17 +12,13 @@ const findGreatestCommonDivisor = (firstOperand, secondOperand) => {
 };
 
 const greatestCommonDivisor = () => {
-  const lowerLimit = 1;
-  const upperLimit = 100;
-
-  const firstOperand = getRandomNumder(lowerLimit, upperLimit);
-  const secondOperand = getRandomNumder(lowerLimit, upperLimit);
-  const questionNumbers = `${firstOperand} ${secondOperand}`;
+  const firstOperand = getRandomNumder();
+  const secondOperand = getRandomNumder();
 
   const correctAnswer = findGreatestCommonDivisor(firstOperand, secondOperand).toString();
 
   return {
-    question: questionNumbers,
+    question: `${firstOperand} ${secondOperand}`,
     correctAnswer,
   };
 };

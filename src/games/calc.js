@@ -5,8 +5,8 @@ const rulesText = 'What is the result of the expression?';
 
 const operators = ['*', '-', '+'];
 
-function chooseOperator(firstOperand, secondOperand, randomOperator) {
-  switch (randomOperator) {
+function chooseOperator(firstOperand, secondOperand, operator) {
+  switch (operator) {
     case '*':
       return firstOperand * secondOperand;
     case '-':
@@ -14,18 +14,16 @@ function chooseOperator(firstOperand, secondOperand, randomOperator) {
     case '+':
       return firstOperand + secondOperand;
     default:
-      throw new Error('Unknown state!');
+      throw new Error(`Unknown operator: ${operator}`);
   }
 }
 
 const brainCalcGame = () => {
   const randomOperatorIndex = getRandomNumder(0, operators.length - 1);
-  const lowerLimit = 1;
-  const upperLimit = 100;
 
   const randomOperator = operators[randomOperatorIndex];
-  const firstOperand = getRandomNumder(lowerLimit, upperLimit);
-  const secondOperand = getRandomNumder(lowerLimit, upperLimit);
+  const firstOperand = getRandomNumder();
+  const secondOperand = getRandomNumder();
 
   const question = `${firstOperand} ${randomOperator} ${secondOperand}`;
 

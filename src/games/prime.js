@@ -20,9 +20,7 @@ const isPrime = (number) => {
 };
 
 const buildRoundData = () => {
-  const lowerLimit = 1;
-  const upperLimit = 100;
-  const randomNumber = getRandomNumder(lowerLimit, upperLimit);
+  const randomNumber = getRandomNumder();
   const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
   return {
     question: randomNumber,
