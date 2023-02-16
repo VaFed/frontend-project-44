@@ -6,7 +6,6 @@ const rulesText = 'What number is missing in the progression?';
 const buildProgression = (firstNumber, oneToTenStepOfProgression, numberOfProgressionSteps) => {
   const resultArrProgression = [firstNumber];
   const addToTenStep = 1;
-  
   for (let i = 1; i <= numberOfProgressionSteps + addToTenStep; i += 1) {
     resultArrProgression.push(firstNumber + i * oneToTenStepOfProgression);
   }
@@ -24,7 +23,6 @@ const buildRoundData = () => {
 
   const numberOfSteps = 8;
   const progression = buildProgression(firstNumber, stepOfProgression, numberOfSteps);
-  console.log(progression)
   const positionOfHidenElement = getRandomNumder(lowerLimit, progression.length - 1);
   const correctAnswer = progression[positionOfHidenElement];
   progression[positionOfHidenElement] = '..';

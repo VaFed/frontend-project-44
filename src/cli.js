@@ -8,4 +8,4 @@ const greetings = () => {
 
 const helloGamer = () => greetings();
 
-export default greetings;
+export default helloGamer;
